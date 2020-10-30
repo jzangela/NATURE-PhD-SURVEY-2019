@@ -1,0 +1,50 @@
+ TITLE: Ph.D. Nature Survey 2019
+
+    DATA: FILE = "C:\Users\ATS-Workshop\Downloads\MplusData0821.dat";
+
+    VARIABLE:
+    NAMES =ID HomeCountry relationship guidance social collaboration funding 
+    benefits publications teaching careersupport 
+    Academia DeltaA PrepR PrepNR 
+    Age Female 
+    Caucasian LatinoHispanic MiddleEastern African SouthAsian EastAsian OtherEth 
+    Africa Asia Australasia Europe NorthCentralAmerica SouthAmerica 
+    PhDReason HoursWorked HoursMeeting Anxiety Bullying Discrimination Caring;
+    MISSING = ALL(9999);
+
+    IDVARIABLE = ID;
+
+    USEVARIABLES = relationship guidance social collaboration funding 
+    benefits publications teaching careersupport;
+
+
+    CLASSES=c(6);
+
+    AUXILIARY = (R3STEP)  Age Female     
+     LatinoHispanic MiddleEastern African SouthAsian EastAsian OtherEth
+     Africa Asia Australasia NorthCentralAmerica SouthAmerica
+     PhDReason HoursWorked HoursMeeting Anxiety Bullying Discrimination Caring;
+
+
+    ANALYSIS:
+    TYPE=MIXTURE;
+
+    PLOT:
+    TYPE = PLOT3;
+    SERIES = relationship guidance social collaboration funding 
+    benefits publications teaching careersupport(*);
+
+    SAVEDATA:
+
+    SAVE = CPROBABILITIES;
+
+    FILE = COV 6 C LPA.dat;
+
+    FORMAT = FREE;
+
+    ESTIMATES = COV 6 C LPA MIXEST.dat;
+
+    OUTPUT:
+    TECH4 TECH7 TECH11 TECH14;
+
+    CINTERVAL;
