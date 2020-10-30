@@ -1,5 +1,5 @@
 # NATURE-PhD-SURVEY-2019
-This repo contains cleaned code used to generate estimates of international doctoral students typology with covariates and distal outcomes as reported in *International graduate student satisfaction typology includes advisor relationship and bullying*. Additional analysis and illustration are also included.
+This repo contains cleaned code used to generate estimates of international doctoral students typology with covariates and distal outcomes as reported in *Relationship and bullying by supervisor central to international graduate student satisfaction typology*. Additional analysis and illustration are also included.
 
 This repo contains mainly six directories:
 
